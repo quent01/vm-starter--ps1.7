@@ -1,0 +1,46 @@
+/**
+ * NOTICE OF LICENSE
+ *
+ * @author    202 ecommerce <tech@202-ecommerce.com>
+ * @author    Mondial Relay
+ * @copyright Copyright (c) Mondial Relay
+ * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+
+@import '../_variables';
+@import '../global';
+
+#mondialrelay_header {
+  display: flex;
+}
+
+#mondialrelay_header .mondialrelay_logo {
+  margin: 0 20px 0 0;
+  @media (max-width: $col-xs-max) {
+    width: 4em;
+  }
+}
+
+.bootstrap .mondialrelay_long-label {
+  @media (min-width: $col-lg-min) {
+    // Specify col-lg classes in case the BO uses a different theme... Very
+    // unlikely, but still.
+    label.col-lg-3 {
+      float: none;
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 0;
+      
+      + div.col-lg-9 {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+      }
+    }
+  }
+}
+
+.mondialrelay_icon-generate img {
+  height: 1em;
+}
