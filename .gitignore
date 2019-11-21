@@ -16,3 +16,11 @@ public/adminx8tzc6y6nt/import/*
 public/adminx8tzc6y6nt/export/*
 !public/adminx8tzc6y6nt/export/.htaccess
 !public/adminx8tzc6y6nt/export/index.php
+
+
+# Modules we cannnot install with composer
+!public/modules/mondialrelay
+!public/modules/paypal
+!public/modules/ps_searchbarjqauto
+
+!public/modules/tiz_*
