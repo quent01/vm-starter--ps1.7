@@ -22,10 +22,15 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<section class="featured-products clearfix">
-  <p class="products-section-title">
-    {l s='Popular Products' d='Shop.Theme.Catalog'}
-  </p>
+<section class="ps-featuredproducts featured-products clearfix">
+  <h2 class="h1 text-center">
+    {l s='Sélection de produit' d='Shop.Theme.Catalog'}
+  </h2>
+  <div class="text-center">
+    <p class="">
+      Retrouvez tous nos produits apportant bien-être et confort à votre circulation sanguine
+    </p>
+  </div>
   {assign var="productscount" value=$products|count}
   <div class="products products-slick spacing-md-top{if $productscount > 1} products--slickmobile{/if}" data-slick='{strip}
     {ldelim}
@@ -41,8 +46,8 @@
         {if $productscount > 4}
         {ldelim}
         "arrows":true,
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
         "arrows":true
         {rdelim}
         {else}
@@ -79,8 +84,12 @@
     {foreach from=$products item="product"}
       {include file="catalog/_partials/miniatures/product.tpl" product=$product}
     {/foreach}
-    </div>
-  <a class="all-product-link float-left float-md-right" href="{$allProductsLink}">
-    {l s='All products' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
-  </a>
+  </div>
+
+  <div class="text-center">
+    <a class="all-product-link btn btn-primary" href="{$allProductsLink}">
+      <span>{l s='All products' d='Shop.Theme.Catalog'}</span>
+      {* <i class="material-icons">&#xE315;</i> *}
+    </a>
+  </div>  
 </section>

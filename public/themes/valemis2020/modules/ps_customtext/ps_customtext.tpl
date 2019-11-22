@@ -23,8 +23,9 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<div id="custom-text" class="card">
-  <div class="card-body">
-  {$cms_infos.text nofilter}
+<div id="custom-text" class="ps-customtext">
+  <h2 class="h1 text-center">Valemis</h2>
+  <div class="card-body ps-customtext__body">
+    {$cms_infos.text nofilter}
   </div>
 </div>

@@ -1,26 +1,47 @@
-@import "partials/variables";
-@import "bootstrap";
-@import "partials/mixins";
-@import "partials/custom_variables";
-@import "partials/fonts";
-@import "partials/commons";
-@import "partials/lazysizes";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "01.utils/variables";
 
-@import "components/alert";
-@import "components/block-social";
-@import "components/cart";
-@import "components/categories";
-@import "components/customer";
-@import "components/footer";
-@import "components/imageslider";
-@import "components/mainmenu";
-@import "components/offcanvas";
-@import "components/products";
-@import "components/facet";
-@import "components/slick";
-@import "components/slick-theme";
-@import "components/header";
-@import "components/productcomments";
-@import "components/utilities";
-@import "partials/bs_alpha";
+@import "bootstrap";
+
+// utils
+@import "01.utils/mixins";
+@import "01.utils/custom_variables";
+@import "01.utils/fonts";
+@import "01.utils/commons";
+@import "01.utils/lazysizes";
+@import "01.utils/bs_alpha";
+
+// Base
+@import "02.base/type.scss";
+
+
+// components
+@import "03.components/alert";
+@import "03.components/buttons";
+@import "03.components/block-social";
+@import "03.components/cart";
+@import "03.components/categories";
+@import "03.components/customer";
+@import "03.components/footer";
+@import "03.components/carousel";
+@import "03.components/mainmenu";
+@import "03.components/offcanvas";
+@import "03.components/products";
+@import "03.components/facet";
+@import "03.components/slick";
+@import "03.components/slick-theme";
+@import "03.components/header";
+@import "03.components/productcomments";
+@import "03.components/utilities";
+
+
+// Modules
+@import "04.modules/ps_customtext";
+
+
+// layouts
+
+
+// pages
 

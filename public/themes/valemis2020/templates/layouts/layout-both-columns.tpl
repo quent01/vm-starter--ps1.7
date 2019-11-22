@@ -54,9 +54,10 @@
         {block name='wrapper'}
         <section id="wrapper" class="{block name='layoutWrapperClass'}l-wrapper{/block}">
         {hook h="displayWrapperTop"}
-          {block name='breadcrumb'}
+
+          {* {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
-          {/block}
+          {/block} *}
             <div class="row">
           {block name="left_column"}
             <div id="left-column" class="left-column col-12 col-md-4 col-lg-3">

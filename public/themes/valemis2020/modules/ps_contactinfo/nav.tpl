@@ -22,15 +22,15 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<div id="_desktop_contact_link">
-  <div id="contact-link">
+<div id="_desktop_contact_link" class="ps-contactinfo--nav">
+  <div id="contact-link" class="btn btn-primary">
     {if $contact_infos.phone}
       {* [1][/1] is for a HTML tag. *}
       {l
         s='Call us: [1]%phone%[/1]'
         sprintf=[
-          '[1]' => '<span>',
-          '[/1]' => '</span>',
+          '[1]' => '<strong>',
+          '[/1]' => '</strong>',
           '%phone%' => $contact_infos.phone
         ]
         d='Shop.Theme.Global'
