@@ -1,0 +1,22 @@
+.icon-download::before,
+.icon-database::before,
+.icon-cloud-upload::before,
+.icon-history::before,
+.icon-eraser::before,
+.icon-question-circle::before {
+  font-family: FontAwesome;
+  font-size: 14px;
+}
+.main-menu i {
+  display: inline-block;
+  float: left;
+  width: 15px;
+}
+.main-menu i.icon-download,
+.main-menu i.icon-database,
+.main-menu i.icon-cloud-upload,
+.main-menu i.icon-history,
+.main-menu i.icon-eraser,
+.main-menu i.icon-question-circle{
+    font-size: 0!important;
+}

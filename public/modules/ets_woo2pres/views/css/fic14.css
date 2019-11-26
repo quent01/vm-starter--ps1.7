@@ -1,0 +1,244 @@
+.icon-check:before{content:"\f00c"}
+.icon-refresh:before{content:"\f021"}
+.icon-trash:before{content:"\f1f8"}
+.icon-cloud-download:before{content:"\f0ed"}
+.icon-database:before{content:"\f1c0"}
+.icon-download:before{content:"\f019"}
+.icon-cloud-upload:before{content:"\f0ee"}
+.icon-history:before{content:"\f1da"}
+.icon-eraser:before{content:"\f12d"}
+.icon-question-circle:before{content:"\f059"}
+
+.icon{
+    display: inline-block;
+  font-family: FontAwesome;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
+  font-size: inherit;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+}
+#import_history.import,
+#export_history.export {
+  border: 1px solid #ddd;
+}
+.data_import_data .ybc-blog-tab-step1 .source.upload label[for="file_import"] {
+  line-height: 31px;
+  margin-bottom: 0;
+}
+.dtm-right-block .form-group .checkbox > label {
+  text-align: left;
+}
+.ybc-blog-tab-step1 label {
+  clear: both;
+  display: block;
+  width: auto;
+}
+.dtm-right-block .checkbox input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: -1px;
+}
+.data_number_step {
+  font-size: 12px;
+}
+.panel-footer {
+  margin-top: 25px;
+}
+.dtm-right-block .panel{
+    background-color: #fff;
+    border: 1px solid #d3d8db;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.dtm-right-block .checkbox > label {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  font-weight: normal;
+  margin-bottom: 3px;
+}
+ .dtm-right-block .panel-heading {
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 10px 15px;
+}
+.dtm-right-block .panel-heading {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: -moz-use-text-color -moz-use-text-color #eee;
+  border-image: none;
+  border-style: none none solid;
+  border-width: medium medium 1px;
+  font-size: 1.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+  margin: -20px -16px 15px;
+  padding: 0 0 0 5px;
+  text-transform: uppercase;
+}
+.dtm-right-block .panel .panel-heading {
+  color: #555;
+  font-family: "Ubuntu Condensed",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 32px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab_step_data {
+  margin: 25px -5px 20px;
+}
+.export {
+  padding-left: 5%;
+}
+.import {
+  padding-left: 5%;
+  padding-right: 3%;
+}
+.data_number_step:not(:last-child)::after {
+  margin: 0 8px;
+}
+.ets_datamaster_error li {
+  list-style: outside none none;
+}
+.tab_content {
+  padding: 15px;
+}
+#block_form_clear_message {
+  width: 100%;
+}
+.col-sm-9 label {
+  margin-bottom: 10px;
+  text-align: left;
+}
+.dtm-right-block .ybc-blog-tab-step2 .checkbox > label {
+  clear: both;
+  width: auto;
+}
+.ets_datamaster_error {
+  margin-top: 10px;
+  position: relative;
+  display: block;
+  clear: both;
+}
+.ets_datamaster_error .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+.ybc-form-group > .form-group {
+  clear: both;
+  display: block;
+  float: left;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.form-group > div{
+    float: left;
+}
+.divide_file_xml .prestashop-switch input + label,
+.ybc-form-group .form-group .prestashop-switch input + label {
+  float: none;
+  width: auto;
+}
+.form-group > label {
+  clear: both;
+  float: left;
+}
+.form-group .control-label.col-lg-6 {
+  margin-bottom: 10px;
+  margin-right: 0;
+  padding: 0;
+  width: auto;
+}
+.ybc-form-group .form-group .col-lg-9 {
+  width: 75%;
+}
+.list-data-to-export > li {
+  line-height: 20px;
+}
+.data-to-export > div {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.data-format-to-export > div {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.data-format-to-export > ul {
+  list-style: inside none disc;
+  padding-left: 15px;
+}
+.list-data-to-export {
+  list-style: inside none disc;
+  margin-bottom: 10px;
+}
+.data_upload_button > input {
+  box-shadow: none;
+  height: 100%;
+  width: 100%;
+}
+#content .alert {
+  clear: both;
+}
+label.col-lg-12 {
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+}
+.export_history_content td:last-child {
+    min-width: 100px;
+}
+@media (min-width: 768px){
+    .control-label.col-lg-4 {
+      float: left;
+      margin: 0;
+      width: 33.33%;
+      padding: 0 15px;
+    }
+    .col-lg-8 {
+      float: left;
+      width: 66.66%;
+      padding: 0 15px;
+    }
+    .col-sm-9 {
+      width: 75%;
+      padding: 0 15px;
+      text-align: left;
+    }
+    .col-sm-3 {
+      width: 25%;
+      padding: 0 15px;
+      min-height: 1px;
+    }
+}
+@media (max-width: 767px){
+    .control-label.col-lg-4 {
+      float: left;
+      margin: 0;
+      text-align: left;
+      width: 100%;
+    }
+    .col-lg-8 {
+      float: left;
+      width: 100%;
+    }
+}

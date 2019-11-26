@@ -1,0 +1,54 @@
+.icon-download::before, 
+.icon-database::before, 
+.icon-cloud-upload::before, 
+.icon-history::before, 
+.icon-eraser::before, 
+.icon-question-circle::before {
+    font-family: FontAwesome;
+    font-size: 14px;
+}
+
+.icon-AdminDataMaster:before {
+  content: "\f0ec";
+}
+#content .process-icon-database:before, .icon-database:before {
+    content: "\F1C0";
+}
+#content .process-icon-download-alt:before, 
+#content .process-icon-save-date:before, 
+#content .process-icon-save-status:before, 
+.icon-arrow-circle-o-down:before, 
+.icon-download-alt:before, 
+.icon-download:before {
+    content: "\F01A";
+}
+.icon-cloud-upload:before {
+    content: "\F0EE";
+}
+.icon-history:before {
+    content: "\F1DA";
+}
+.icon-eraser:before {
+    content: "\F12D";
+}
+.icon-question-circle:before, 
+.icon-question-sign:before {
+    content: "\F059";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
