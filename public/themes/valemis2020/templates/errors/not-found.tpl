@@ -24,13 +24,21 @@
  *}
 <section id="content" class="page-content page-not-found">
   {block name='page_content'}
+    {* <h4>{l s='Sorry for the inconvenience.' d='Shop.Theme.Global'}</h4> *}
+    <div class="text-center">
+      <p>
+        {* {l s='Search again what you are looking for' d='Shop.Theme.Global'} *}
+        Il semblerait que la page à laquelle vous souhaitez accéder n'existe pas. <br>
+        Mais pas de panique, notre boutique elle, est toujours accessible !
+      </p>
+      <div>
+        <a href="" class="btn btn-primary">Retourner à la boutique</a>
+      </div>
+    </div>
 
-    <h4>{l s='Sorry for the inconvenience.' d='Shop.Theme.Global'}</h4>
-    <p>{l s='Search again what you are looking for' d='Shop.Theme.Global'}</p>
-
-    {block name='search'}
+    {* {block name='search'}
       {hook h='displaySearch'}
-    {/block}
+    {/block} *}
 
     {block name='hook_not_found'}
       {hook h='displayNotFound'}

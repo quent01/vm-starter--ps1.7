@@ -24,9 +24,14 @@
  *}
 {extends file='page.tpl'}
 
-{block name='page_title'}
-  {$page.title}
+{block name='page_header_container'}
+  {block name='page_title'}
+    <header class="{block name='pageHeaderClass'}page-header {/block}page-header--{$page.page_name}">
+      <h1 class="h2 text-center">{$page.title}</h1>
+    </header>
+  {/block}
 {/block}
+
 
 {block name='page_content_container'}
   {include file='errors/not-found.tpl'}
