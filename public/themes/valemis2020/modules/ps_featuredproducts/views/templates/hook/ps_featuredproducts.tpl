@@ -22,6 +22,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+{assign var="productscount" value=$products|count}
 <section class="ps-featuredproducts featured-products clearfix">
   <h2 class="h1 text-center">
     {l s='Sélection de produit' d='Shop.Theme.Catalog'}
@@ -31,7 +32,6 @@
       Retrouvez tous nos produits apportant bien-être et confort à votre circulation sanguine
     </p>
   </div>
-  {assign var="productscount" value=$products|count}
   <div class="products products-slick spacing-md-top{if $productscount > 1} products--slickmobile{/if}" data-slick='{strip}
     {ldelim}
     "slidesToShow": 1,

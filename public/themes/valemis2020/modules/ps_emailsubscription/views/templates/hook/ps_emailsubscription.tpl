@@ -23,10 +23,13 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="block_newsletter col-lg-8 col-12">
-  <div class="row">
-    <p id="block-newsletter-label" class="col-md-5 col-12">{l s='Get our latest news and special sales' d='Shop.Theme.Global'}</p>
-    <div class="col-md-7 col-12">
+<div class="ps-emailsubscription block_newsletter">
+  <div class="text-center">
+    <p id="block-newsletter-label" class="h1">
+      {l s='Suivez-nous avec notre newsletter' d='Shop.Theme.Global'}
+    </p>
+    <button class="btn btn-primary">S'inscrire à la newsletter</button>
+    <div class="">
       <form action="{$urls.pages.index}#footer" method="post" class="needs-validation">
         <input type="hidden" name="action" value="0">
         <div class="input-group">

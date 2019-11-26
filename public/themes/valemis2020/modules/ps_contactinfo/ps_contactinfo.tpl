@@ -23,9 +23,11 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 
-<div class="block-contact col-md-3">
-    <p class="footer__title footer__title--desktop">{l s='Store information' d='Shop.Theme.Global'}</p>
-    <a href="#footer_store_info" class="footer__title--mobile footer__title" data-toggle="collapse">{l s='Store information' d='Shop.Theme.Global'}</a>
+<div class="ps-contactinfo block-contact col-md-6 col-lg-3">
+  <p class="footer__title footer__title--desktop">{l s='Valemis' d='Shop.Theme.Global'}</p>
+  <a href="#footer_store_info" class="footer__title--mobile footer__title" data-toggle="collapse">
+    {l s='Valemis' d='Shop.Theme.Global'}
+  </a>
 
 
   <div id="footer_store_info" class="account-list collapse show" data-collapse-hide-mobile>
@@ -33,7 +35,7 @@
       {if $contact_infos.phone}
         <br>
         {* [1][/1] is for a HTML tag. *}
-        {l s='Call us: [1]%phone%[/1]'
+        {l s='Téléphone: [1]%phone%[/1]'
           sprintf=[
           '[1]' => '<span>',
           '[/1]' => '</span>',
@@ -59,7 +61,7 @@
         <br>
         {* [1][/1] is for a HTML tag. *}
         {l
-          s='Email us: [1]%email%[/1]'
+          s='Email : [1]%email%[/1]'
           sprintf=[
             '[1]' => '<a href="mailto:'|cat:$contact_infos.email|cat:'" class="dropdown">',
             '[/1]' => '</a>',
