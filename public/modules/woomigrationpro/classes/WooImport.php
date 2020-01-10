@@ -32,7 +32,7 @@ class WooImport
 
     // --- Objects, Option & response vars:
     // wooComerce version 4.9.8
-    private $validator;
+    protected $validator;
     protected $obj;
     protected $process;
     protected $client;
@@ -1240,7 +1240,7 @@ class WooImport
         $this->updateProcess(count($products['product']));
     }
 
-    private function importProductAccessories($id_product, $_related_ids)
+    public function importProductAccessories($id_product, $_related_ids)
     {
         $sql_values = array();
         $related_ids = unserialize($_related_ids);
@@ -1632,8 +1632,7 @@ class WooImport
                             $orderDetailModel->total_shipping_price_tax_incl = $orderDetail['cost'] + $orderDetail['shipping_tax_amount'];
 
                             //@TODO Nujno take generirovat informasii ot PS 1.4 nije
-//                                    }
-
+                            //                                    }
 
                             $res = false;
                             $err_tmp = '';
@@ -1670,7 +1669,7 @@ class WooImport
                         }
                     }
 
-//                         import Order History
+                    //                         import Order History
                     foreach ($orderHistorys as $orderHistory) {
                         if ($orderHistory['id_order'] == $order['id_order']) {
                             if ($orderHistoryModel = $this->createObjectModel('OrderHistory', $orderHistory['id_order'])) {
@@ -1717,7 +1716,7 @@ class WooImport
             }
         }
 
-//        update order invoice and shipping addresses
+        //        update order invoice and shipping addresses
 
         foreach ($orders['billing_address'] as $address) {
             $id_customer = self::getLocalID('Customer', $address['_customer_user'], 'data');
@@ -1898,7 +1897,7 @@ class WooImport
         return $result;
     }
 
-    private function createObjectModel($className, $objectID, $table_name = '')
+    public function createObjectModel($className, $objectID, $table_name = '')
     {
         if (!WooMigrationProData::exist($className, $objectID)) {
             // -- if keep old IDs and if exists in DataBase
@@ -1926,7 +1925,7 @@ class WooImport
         }
     }
 
-    private function updateProcess($count)
+    public function updateProcess($count)
     {
         if (!count($this->error_msg) && $count > 0) {
             $this->process->imported += $count;//@TODO count of item
@@ -1948,7 +1947,7 @@ class WooImport
         }
     }
 
-    private static function existsInDatabase($id_entity, $table, $entity_name)
+    public static function existsInDatabase($id_entity, $table, $entity_name)
     {
         $row = Db::getInstance()->getRow('
 			SELECT `id_' . bqSQL($entity_name) . '` as id
@@ -1967,7 +1966,7 @@ class WooImport
      * @param mixed $regenerate
      * @return boolean
      */
-    private static function copyImg($id_entity, $id_image, $FilePath, $entity = 'products', $regenerate = false)
+    public static function copyImg($id_entity, $id_image, $FilePath, $entity = 'products', $regenerate = false)
     {
         $tmpfile = $FilePath;
 
@@ -2009,7 +2008,7 @@ class WooImport
         return true;
     }
 
-    private static function getBestPath($tgt_width, $tgt_height, $path_infos)
+    public static function getBestPath($tgt_width, $tgt_height, $path_infos)
     {
         $path_infos = array_reverse($path_infos);
         $path = '';
@@ -2023,7 +2022,7 @@ class WooImport
         return $path;
     }
 
-    private static function imageExits($url)
+    public static function imageExits($url)
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_NOBODY, true);
@@ -2038,7 +2037,7 @@ class WooImport
         }
     }
 
-    private function getLocalID($map_type, $sourceID, $table_type = 'map')
+    public function getLocalID($map_type, $sourceID, $table_type = 'map')
     {
         if ($table_type === "map") {
             $result = (isset($this->mapping[$map_type][$sourceID]) && !WooImport::isEmpty($this->mapping[$map_type][$sourceID])) ? $this->mapping[$map_type][$sourceID] : 0;
@@ -2053,19 +2052,19 @@ class WooImport
     }
 
 
-    private function getLanguageID($source_lang_id)
+    public function getLanguageID($source_lang_id)
     {
         return $this->getLocalID('languages', $source_lang_id);
     }
 
 
-    private function getCustomerGroupID($source_lang_id)
+    public function getCustomerGroupID($source_lang_id)
     {
         return $this->getLocalID('customer_groups', $source_lang_id);
     }
 
 // after end workin delete
-    private function getDefaultCategory($product_id, $product_cats)
+    public function getDefaultCategory($product_id, $product_cats)
     {
 
         foreach ($product_cats as $product_cat) {
@@ -2075,13 +2074,13 @@ class WooImport
         }
     }
 
-    private static function cleanString($input)
+    public static function cleanString($input)
     {
         return preg_replace('/[^ A-Za-z]/', '', $input);
     }
 
 
-    private function createCustomer($id_order, $address)
+    public function createCustomer($id_order, $address)
     {
         $costumerDetails = $address['billing_address'][$id_order];
         $shipAddress = $address['shipping_address'][$id_order];
@@ -2264,7 +2263,7 @@ class WooImport
         return Tools::ps_round($field, 6);
     }
 
-    private function getManufactureImage($man_id, $man_images)
+    public function getManufactureImage($man_id, $man_images)
     {
         foreach ($man_images as $man_image) {
             if ($man_image['ID'] == $man_id) {
@@ -2273,7 +2272,7 @@ class WooImport
         }
     }
 
-    private function getProductManufactureId($id_product, $manufactures)
+    public function getProductManufactureId($id_product, $manufactures)
     {
         foreach ($manufactures as $manufacture) {
             if ($manufacture['id_product'] == $id_product) {
@@ -2658,7 +2657,7 @@ class WooImport
         return $id_attribute;
     }
 
-    private function showMigrationMessageAndLog($log, $entityType, $showOnlyWarning = true)
+    public function showMigrationMessageAndLog($log, $entityType, $showOnlyWarning = true)
     {
         if ($this->ps_validation_errors) {
             if ($showOnlyWarning) {

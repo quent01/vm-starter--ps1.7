@@ -417,7 +417,7 @@ class AdminWooMigrationProController extends AdminController
         return array_unique($convertedStructur);
     }
 
-    private function importManufacturers($process)
+    public function importManufacturers($process)
     {
         $this->client->serializeOn();
         $this->client->setPostData($this->query->manufactures());
@@ -434,7 +434,7 @@ class AdminWooMigrationProController extends AdminController
         }
     }
 
-    private function importCategories($process)
+    public function importCategories($process)
     {
 
         //@TODO find fix for PS 1.4 for category id 2 WHERE is ID 2 standart category from list
@@ -460,7 +460,7 @@ class AdminWooMigrationProController extends AdminController
         }
     }
 
-    private function importProducts($process)
+    public function importProducts($process)
     {
         $this->client->serializeOn();
         $this->client->setPostData($this->query->product($this->wpml));
@@ -496,8 +496,9 @@ class AdminWooMigrationProController extends AdminController
         return '"' . implode('","', array_filter($urls_array)) . '"';
     }
 
-    private function importCustomers($process)
+    public function importCustomers($process)
     {
+        die('origin');
         $this->client->serializeOn();
         $this->client->setPostData($this->query->customers());
         if ($this->client->query()) {
@@ -513,7 +514,7 @@ class AdminWooMigrationProController extends AdminController
         }
     }
 
-    private function importOrders($process)
+    public function importOrders($process)
     {
         $this->client->serializeOn();
         $this->client->setPostData($this->query->order($this->woo_version));
