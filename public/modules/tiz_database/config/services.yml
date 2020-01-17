@@ -1,0 +1,5 @@
+services:
+    tiz.tiz_database.database_command:
+        class: Tiz\TizDatabase\Command\DatabaseCommand
+        tags:
+            - { name: 'console.command' }
