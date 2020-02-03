@@ -22,21 +22,31 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+{block name='hook_footer_before'}
+  {hook h='displayFooterBefore'}
+{/block} 
 <div class="container-fluid l-footer__top">
   <div class="row">
-    <div class="l-footer__top__col col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        {block name='hook_footer_before'}
-          {hook h='displayFooterBefore'}
-        {/block}
+    <div class="bg bg--primary-darker l-footer__top__col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="ps-emailsubscription block_newsletter">
+          <div class="text-center">
+            <h2 id="block-newsletter-label" class="h0 fw-normal ps-emailsubscription__title">
+              <strong>Suivez-nous</strong> avec notre newsletter
+            </h2>
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalEmailsubscription">S'inscrire à la newsletter</button>
+          </div>
+        </div>
     </div>
-    <div class="l-footer__top__col col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="bg bg--white l-footer__top__col col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="text-center">
-        <p class="h1">Une question ? contactez nous</p>
+        <h2 class="h0 fw-normal">
+          <strong>Une question ?</strong> <br>Contactez nous
+        </h2>
         <a href="#" class="btn btn-primary">Nous contacter</a>
       </div>
     </div>
   </div>
-</div>  
+</div> 
 <div class="container l-footer__middle">
   <div class="row">
     <div class="container-fluid">
@@ -60,7 +70,6 @@
     </div>
   </div>
 </div>
-
 
 
 {literal}

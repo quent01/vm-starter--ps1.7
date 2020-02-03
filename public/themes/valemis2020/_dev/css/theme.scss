@@ -17,13 +17,14 @@
 
 
 // components
+@import "03.components/background";
 @import "03.components/alert";
 @import "03.components/buttons";
+@import "03.components/modal";
 @import "03.components/block-social";
 @import "03.components/cart";
 @import "03.components/categories";
 @import "03.components/customer";
-@import "03.components/footer";
 @import "03.components/carousel";
 @import "03.components/mainmenu";
 @import "03.components/offcanvas";
@@ -31,16 +32,19 @@
 @import "03.components/facet";
 @import "03.components/slick";
 @import "03.components/slick-theme";
-@import "03.components/header";
 @import "03.components/productcomments";
 @import "03.components/utilities";
 
 
 // Modules
+@import "04.modules/blockreassurance";
 @import "04.modules/ps_customtext";
 
 
 // layouts
+@import "05.layouts/grid";
+@import "05.layouts/header";
+@import "05.layouts/footer";
 
 
 // pages

@@ -1,0 +1,20 @@
+.bg{
+    h1, .h1,
+    h2, .h2{
+        color: inherit;
+    }
+    &--primary{
+
+    }
+    &--primary-dark{
+
+    }
+    &--primary-darker{
+        color: white;
+        background-color: fade-out(theme-color("primary-darker"), 0.15);
+    }
+    &--white{
+        background-color: fade-out(white, 0.1);
+        color: theme-color("primary-darker");
+    }
+}

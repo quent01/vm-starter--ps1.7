@@ -22,10 +22,12 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
-<div id="custom-text" class="ps-customtext">
-  <h2 class="h1 text-center">Valemis</h2>
-  <div class="card-body ps-customtext__body">
-    {$cms_infos.text nofilter}
-  </div>
+<div class="container">
+  <hr>  
+  <section id="custom-text" class="section section--pt4 ps-customtext">
+    <h2 class="h1 text-center">Valemis</h2>
+    <div class="card-body ps-customtext__body">
+      {$cms_infos.text nofilter}
+    </div>
+  </section>
 </div>

@@ -1,0 +1,18 @@
+.h0{
+  font-size: $h0-font-size;
+}
+
+h1,
+.h1{
+  text-transform: $h1-text-transform;
+}
+
+h1, .h1, 
+h2, .h2{
+  color: theme-color("primary-darker");
+  font-weight: $fw-semibold;
+}
+
+.fw-normal{
+  font-weight: normal;
+}

@@ -25,38 +25,39 @@
 {if $homeslider.slides}
 
     {assign var=paddingbottom value=($homeslider.slides[0]['sizes'][1]/$homeslider.slides[0]['sizes'][0]*100)}
+    <div class="container">
+        <div id="carousel" class="section section--pt0 section--pb0.5 ps-imageslider carousel" {if $homeslider.slides|count > 1}data-slick={strip}
+        '{literal}{
+            "autoplay": true,
+            "slidesToShow": 1,
+            "adaptiveHeight": true,
+            "autoplaySpeed":{/literal}{$homeslider.speed}{literal}
+            }{/literal}'{/strip}
+            {/if}>
+            {foreach from=$homeslider.slides item=slide name='homeslider'}
+                <a href="{$slide.url}" class="carousel__slide">
+                    <div class="" style="">
+                        {* <img data-src="{$slide.image_url}" alt="{$slide.legend|escape}" class="w-100 lazyload img-carousel"> *}
+                        {* <noscript> *}
+                        <img src="{$slide.image_url}" alt="{$slide.legend|escape}">
+                        {* </noscript> *}
 
-    <div id="carousel" class="ps-imageslider carousel" {if $homeslider.slides|count > 1}data-slick={strip}
-    '{literal}{
-        "autoplay": true,
-        "slidesToShow": 1,
-        "adaptiveHeight": true,
-        "autoplaySpeed":{/literal}{$homeslider.speed}{literal}
-        }{/literal}'{/strip}
-        {/if}>
-        {foreach from=$homeslider.slides item=slide name='homeslider'}
-            <a href="{$slide.url}" class="carousel__slide">
-                <div class="" style="">
-                    {* <img data-src="{$slide.image_url}" alt="{$slide.legend|escape}" class="w-100 lazyload img-carousel"> *}
-                    {* <noscript> *}
-                    <img src="{$slide.image_url}" alt="{$slide.legend|escape}">
-                    {* </noscript> *}
-
-                    {if $slide.title || $slide.description}
-                        <div class="carousel__caption">
-                            <div class="carousel__caption__inner">
-                                <h2 class="h1">{$slide.title}</h2>
-                                <div class="caption-description">
-                                    {$slide.description nofilter}
-                                    <div class="">
-                                        <p href="{$slide.url}" class="btn btn-primary">Acheter maintenant</p>
-                                    </div> 
+                        {if $slide.title || $slide.description}
+                            <div class="carousel__caption">
+                                <div class="carousel__caption__inner">
+                                    <h2 class="carousel__title h1">{$slide.title}</h2>
+                                    <div class="caption-description">
+                                        {$slide.description nofilter}
+                                        <div class="">
+                                            <p href="{$slide.url}" class="btn btn-primary">Acheter maintenant</p>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    {/if}
-                </div>
-            </a>
-        {/foreach}
+                        {/if}
+                    </div>
+                </a>
+            {/foreach}
+        </div>
     </div>
 {/if}

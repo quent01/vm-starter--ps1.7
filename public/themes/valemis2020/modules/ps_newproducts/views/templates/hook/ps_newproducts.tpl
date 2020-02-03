@@ -24,73 +24,75 @@
  *}
 
 {assign var="productscount" value=$products|count}
-<section class="ps-newproducts clearfix mt-3">
-  <h2 class="h1 text-center">
-    {l s='Nos nouveautés' d='Shop.Theme.Catalog'}
-  </h2>
-  <div class="text-center">
-    <p class="">
-      Retrouvez tous nos produits apportant bien-être et confort à votre circulation sanguine
-    </p>
-  </div>
+<div class="container">
+  <section class="section section--pb4 ps-newproducts clearfix">
+    <h2 class="h1 text-center">
+      {l s='Nos nouveautés' d='Shop.Theme.Catalog'}
+    </h2>
+    <div class="text-center">
+      <p class="">
+        Retrouvez tous nos produits apportant bien-être et confort à votre circulation sanguine
+      </p>
+    </div>
 
-  <div class="products products-slick" data-slick='{strip}
-  {ldelim}
-    "slidesToShow": 1,
-    "slidesToScroll": 1,
-    "mobileFirst":true,
-    "arrows":true,
-    "rows":0,
-    "responsive": [
-      {ldelim}
-        "breakpoint": 992,
-        "settings":
-        {if $productscount > 4}
+    <div class="products products-slick" data-slick='{strip}
+    {ldelim}
+      "slidesToShow": 1,
+      "slidesToScroll": 1,
+      "mobileFirst":true,
+      "arrows":true,
+      "rows":0,
+      "responsive": [
         {ldelim}
-        "arrows":true,
-        "slidesToShow": 3,
-        "slidesToScroll": 3,
-        "arrows":true
-        {rdelim}
-        {else}
-        "unslick"
-        {/if}
-      {rdelim},
-      {ldelim}
-        "breakpoint": 720,
-        "settings":
-        {if $productscount > 3}
+          "breakpoint": 992,
+          "settings":
+          {if $productscount > 4}
+          {ldelim}
+          "arrows":true,
+          "slidesToShow": 3,
+          "slidesToScroll": 3,
+          "arrows":true
+          {rdelim}
+          {else}
+          "unslick"
+          {/if}
+        {rdelim},
         {ldelim}
-        "arrows":true,
-        "slidesToShow": 3,
-        "slidesToScroll": 3
-        {rdelim}
-        {else}
-        "unslick"
-        {/if}
-      {rdelim},
-      {ldelim}
-        "breakpoint": 540,
-        "settings":
-        {if $productscount > 2}
+          "breakpoint": 720,
+          "settings":
+          {if $productscount > 3}
+          {ldelim}
+          "arrows":true,
+          "slidesToShow": 3,
+          "slidesToScroll": 3
+          {rdelim}
+          {else}
+          "unslick"
+          {/if}
+        {rdelim},
         {ldelim}
-        "arrows":true,
-        "slidesToShow": 2,
-        "slidesToScroll": 2
+          "breakpoint": 540,
+          "settings":
+          {if $productscount > 2}
+          {ldelim}
+          "arrows":true,
+          "slidesToShow": 2,
+          "slidesToScroll": 2
+          {rdelim}
+          {else}
+          "unslick"
+          {/if}
         {rdelim}
-        {else}
-        "unslick"
-        {/if}
-      {rdelim}
-    ]{rdelim}{/strip}'>
-    {foreach from=$products item="product"}
-      {include file="catalog/_partials/miniatures/product.tpl" product=$product}
-    {/foreach}
-  </div>
-  <div class="text-center">
-    <a class="btn btn-primary all-product-link" href="{$allNewProductsLink}">
-      {l s='Voir toutes nos nouveautés' d='Shop.Theme.Catalog'}
-    </a>
-  </div>
-</section>
+      ]{rdelim}{/strip}'>
+      {foreach from=$products item="product"}
+        {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+      {/foreach}
+    </div>
+    <div class="text-center">
+      <a class="btn btn-primary all-product-link" href="{$allNewProductsLink}">
+        {l s='Voir toutes nos nouveautés' d='Shop.Theme.Catalog'}
+      </a>
+    </div>
+  </section>
+</div>
 

@@ -1,0 +1,44 @@
+
+
+.carousel{
+  a {
+    display: block;
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+  &__caption{
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    color: #fff;
+    background-color: fade-out($c-green--darker, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5*$grid-gutter-width;
+    padding-right: 2*$grid-gutter-width;
+    padding-bottom: 0.5*$grid-gutter-width;
+    padding-left: 2*$grid-gutter-width;
+  }
+  &__title{
+    color: inherit;
+  }
+  &__caption__inner{
+    max-width: 365px;
+  }
+  &__slide{
+    display: block !important;
+  }
+
+  @include media-breakpoint-up(md){
+    &__caption{
+      position: absolute;
+      top:0;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+    }
+  }
+}
