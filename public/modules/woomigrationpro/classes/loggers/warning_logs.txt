@@ -1,2 +1,0 @@
-Phone of Address with ID 5078496 is not a valid value in PrestaShop ('Empty000 000 000'). For that reason, the module set default value to 'phone'. - 2019-12-05 05:16:09
-Phone of Address with ID 5144056 is not a valid value in PrestaShop ('Empty000 000 000'). For that reason, the module set default value to 'phone'. - 2019-12-05 05:16:09
