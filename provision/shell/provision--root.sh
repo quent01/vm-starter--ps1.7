@@ -15,7 +15,8 @@ start_seconds="$(date +%s)"
 # Make an HTTP request to google.com to determine if outside access is available
 # to us. If 3 attempts with a timeout of 5 seconds are not successful, then we'll
 # skip a few things further in provisioning rather than create a bunch of errors.
-if [[ "$(wget --tries=3 --timeout=5 --spider http://google.com 2>&1 | grep 'connected')" ]]; then
+curl -Is http://www.google.com | head -1 | grep 200;
+if [[ "$(curl -Is http://www.google.com | head -1 | grep 200)" -eq 0 ]]; then
 	alert_info "Network connection detected..."
 	ping_result="Connected"
 else
@@ -24,11 +25,17 @@ else
 fi
 
 start_provisionning
-presatshop_provisionning
+
+source "${PATH_PROVISION_SHELL}/inc/install.inc.sh"
+
+apache_provisionning
+
+prestashop_provisionning
 
 end_seconds="$(date +%s)"
-provisionning_time="$(expr $end_seconds - $start_seconds)"
-alert_info "Provisioning complete in ${provisionning_time} seconds"
+provisionning_time="$((end_seconds - start_seconds))"
+provisionning_time="$((provisionning_time / 60))"
+alert_info "Provisioning complete in ${provisionning_time} minutes"
 if [[ $ping_result == "Connected" ]]; then
 	alert_info "External network connection established, packages up to date."
 else

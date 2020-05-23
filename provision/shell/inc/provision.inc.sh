@@ -24,16 +24,15 @@ function apache_provisionning(){
 }
 
 
-function presatshop_provisionning(){
+function prestashop_provisionning(){
     alert_info "$(alert_line)"
     alert_info "Provisioning Prestashop..."
     alert_info "$(alert_line)"
 
-    cd /var/www/
-    mkdir -p ${PROJECT_DIR}
-    cd "${PROJECT_DIR}"
+    mkdir -p "${WEB_ROOT}"
 
-    prestashop_install_dependencies
+    prestashop_download
+    # prestashop_install_dependencies
 
     alert_success "$(alert_line)"
     alert_success "End Provisioning Prestashop..."

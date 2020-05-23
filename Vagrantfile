@@ -3,9 +3,9 @@
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box = "scotch/box-pro"
+    config.vm.box = "bento/ubuntu-18.04"
     config.vm.hostname = "scotchbox"
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 80, host: 1234
     config.vm.network "private_network", ip: "192.168.33.19"
     
     if Vagrant::Util::Platform.windows?

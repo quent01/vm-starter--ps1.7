@@ -3,6 +3,18 @@
 # alerts.sh
 #
 
+# Colors
+# ---------------------------------------
+C_RED='\033[0;31m'
+C_YELLOW='\033[1;33m'
+C_NC='\033[0m'              # No Color
+C_GREEN='\033[0;32m'
+C_BRN='\033[0;33m'
+C_BLUE='\033[0;34m'
+C_MAGENTA='\033[0;35m'
+C_CYAN='\033[0;36m'
+C_WHITE='\033[0;97m'
+
 # Alerts
 # $1 : --warning, --info, --success, --error
 # $2 : message
