@@ -15,8 +15,7 @@ start_seconds="$(date +%s)"
 # Make an HTTP request to google.com to determine if outside access is available
 # to us. If 3 attempts with a timeout of 5 seconds are not successful, then we'll
 # skip a few things further in provisioning rather than create a bunch of errors.
-curl -Is http://www.google.com | head -1 | grep 200;
-if [[ "$(curl -Is http://www.google.com | head -1 | grep 200)" -eq 0 ]]; then
+if curl -Is http://www.google.com | head -1 | grep 200 &> /dev/null; then
 	alert_info "Network connection detected..."
 	ping_result="Connected"
 else
@@ -25,11 +24,6 @@ else
 fi
 
 start_provisionning
-
-source "${PATH_PROVISION_SHELL}/inc/install.inc.sh"
-
-apache_provisionning
-
 prestashop_provisionning
 
 end_seconds="$(date +%s)"

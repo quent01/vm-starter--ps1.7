@@ -3,8 +3,8 @@
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box = "bento/ubuntu-18.04"
-    config.vm.hostname = "scotchbox"
+    config.vm.box = "quent01/vm-starter--lamp"
+    config.vm.hostname = "ps"
     config.vm.network "forwarded_port", guest: 80, host: 1234
     config.vm.network "private_network", ip: "192.168.33.19"
     
@@ -38,7 +38,6 @@ Vagrant.configure("2") do |config|
     if Vagrant::Util::Platform.windows?
         config.vm.provision "shell",
         inline: "
-            sudo apt-get install -y dos2unix && 
             cd /var/www/provision/shell &&
             find . -type f -name '*.sh' -print0 | xargs -0 dos2unix &&
             cd /var/www/provision/apache &&
@@ -47,6 +46,7 @@ Vagrant.configure("2") do |config|
         run: "always", privileged: false
     end
 
+    # SSH keys
     config.vm.provision "shell" do |s|
         ssh_prv_key = ""
         ssh_pub_key = ""
