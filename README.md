@@ -3,7 +3,8 @@
 
 ## Introduction
 
-Vagrant box to automattically setup a prestashop project
+Vagrant box to automatically setup a prestashop project 
+It take for the moment approximately 30minutes to download prestashop and download dependencies (depend on internet connection)
 
 ## Installation
 
