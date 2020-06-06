@@ -39,9 +39,7 @@ Vagrant.configure("2") do |config|
         config.vm.provision "shell",
         inline: "
             cd /var/www/provision/shell &&
-            find . -type f -name '*.sh' -print0 | xargs -0 dos2unix &&
-            cd /var/www/provision/apache &&
-            find . -type f -name '*.conf' -print0 | xargs -0 dos2unix
+            find . -type f -name '*.sh' -print0 | xargs -0 dos2unix
         ",
         run: "always", privileged: false
     end
