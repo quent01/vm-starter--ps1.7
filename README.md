@@ -13,9 +13,8 @@ vagrant up
 ```
 
 ## Todo
-- install prestashop via commande line
-- install usefull modules
-- uninstall useless modules
+- install usefull modules : list of modules missing
+- uninstall useless modules : list of modules missing
 - setup a custom theme
 
 ## Ressources
