@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "quent01/vm-starter--lamp"
     config.vm.hostname = "ps"
     config.vm.network "forwarded_port", guest: 80, host: 1234
-    config.vm.network "private_network", ip: "192.168.33.19"
+    config.vm.network "private_network", ip: "192.168.33.20"
     
     if Vagrant::Util::Platform.windows?
         # Optional NFS. Make sure to remove other synced_folder line too
