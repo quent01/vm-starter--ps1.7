@@ -13,11 +13,11 @@ PROJECT_DIR="public"
 WEB_ROOT="/var/www/public/web/"
 LOCALE="fr_FR"
 TIMEZONE="Europe/Paris"
-# ADMIN_USER="tiz"
-# ADMIN_PWD="azertiz67"
-# ADMIN_EMAIL="tech@tiz.fr"
-# ADMIN_FIRSTNAME="Agence"
-# ADMIN_LASTNAME="Tiz"
+# ADMIN_USER="admin"
+# ADMIN_PWD="admin"
+# ADMIN_EMAIL="admin@gmail.com"
+# ADMIN_FIRSTNAME="admin"
+# ADMIN_LASTNAME="admin"
 
 # Modules to install
 # @desc : This is the part you can edit
