@@ -28,7 +28,7 @@ ARR_MODULES[0]=""
 # Modules To uninstall
 # @desc : This is the part you can edit
 # ---------------------------------------
-ARR_MODULES_DISABLE[0]=""
+ARR_MODULES_DISABLE[0]="gamification"
 
 
 

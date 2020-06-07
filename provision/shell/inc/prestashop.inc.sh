@@ -63,14 +63,36 @@ function ps_install_db(){
     alert_info "$(alert_line)"
 }
 
-function ps_install_modules(){
+function ps_modules_install(){
+    alert_info "We install usefull modules"
+    alert_info "$(alert_line)"
     # add module to composer.json && download
-    # install modules
-    return
+    # launch installation of module
+    if [ "${#ARR_MODULES[@]}" -ne 0 ]; then
+        cd "${PATH_WEB}" || return
+        for MODULE in "${ARR_MODULES[@]}"; do 
+            composer require "prestashop/${MODULE}" --prefer-source --no-progress --no-suggest
+            php bin/console prestashop:module install "${MODULE}"
+        done
+    fi
+
+    alert_info "usefull modules installed"
+    alert_info "$(alert_line)"
 }
 
-function ps_disable_modules(){
-    # uninstall module
-    # remove from composer.json & delete folder
-    return
+function ps_modules_disable(){
+    alert_info "We disable useless modules"
+    alert_info "$(alert_line)"
+
+    # disable modules
+    if [ "${#ARR_MODULES_DISABLE[@]}" -ne 0 ]; then
+        cd "${PATH_WEB}" || return
+        composer --global config process-timeout 0
+        for MODULE in "${ARR_MODULES_DISABLE[@]}"; do 
+            php bin/console prestashop:module disable "${MODULE}"
+        done
+    fi
+
+    alert_info "Useless modules disabled"
+    alert_info "$(alert_line)"
 }
