@@ -7,7 +7,7 @@ function start_provisionning(){
     alert_info "Provisioning virtual machine..."
     alert_info "$(alert_line)"
     alert_info "You choose to install ${CMS} version 1.7 with the stack ${STACK}"
-    alert_info "Your project directory will be ${PROJECT_DIR} and web root ${WEB_ROOT}"
+    alert_info "Your project directory will be ${PATH_PUBLIC} and web root ${PATH_WEB}"
     alert_info "It will work on php ${PHP_BASE_VERSION}"
 }
 
@@ -17,10 +17,11 @@ function prestashop_provisionning(){
     alert_info "Provisioning Prestashop..."
     alert_info "$(alert_line)"
 
-    mkdir -p "${WEB_ROOT}"
+    mkdir -p "${PATH_WEB}"
 
-    prestashop_download
-    prestashop_install_dependencies
+    ps_download
+    ps_install_dependencies
+    ps_install_db
 
     alert_success "$(alert_line)"
     alert_success "End Provisioning Prestashop..."

@@ -3,15 +3,15 @@
 # prestashop.inc.sh
 #
 
-function prestashop_download(){
+function ps_download(){
     alert_info "Downloading of ${CMS} ${CMS_VERSION} ..."
     alert_info "$(alert_line)"
 
-    if [ "$(ls -A "${WEB_ROOT}")" ]; then
-        alert_warning "${CMS} ${CMS_VERSION} was not downloaded, ${WEB_ROOT} is not empty."
+    if [[ -f "${PATH_WEB}composer.json" ]]; then
+        alert_warning "${CMS} ${CMS_VERSION} was not downloaded, ${PATH_WEB} is not empty."
         alert_warning "It can be normal if you have already installed ${CMS} ${CMS_VERSION} previously."
     else
-        cd "${WEB_ROOT}" || return
+        cd "${PATH_WEB}" || return
         git clone -b "${CMS_VERSION}" --single-branch --depth 1 https://github.com/PrestaShop/PrestaShop.git .
         rm -rf .git .github
         alert_success "${CMS} ${CMS_VERSION} was downloaded with success..."
@@ -20,12 +20,12 @@ function prestashop_download(){
     alert_success "$(alert_line)"    
 }
 
-function prestashop_install_dependencies(){
+function ps_install_dependencies(){
     alert_info "Installation of ${CMS} ${CMS_VERSION} dependencies ..."
     alert_info "$(alert_line)"
 
     if [[ -f "${PATH_COMPOSER_JSON}" ]]; then
-        cd "${WEB_ROOT}" || return
+        cd "${PATH_WEB}" || return
         composer --global config process-timeout 0
         composer install --prefer-source --optimize-autoloader --no-suggest --no-progress
         alert_success "${CMS} ${CMS_VERSION} dependencies were installed with success..."
@@ -34,4 +34,43 @@ function prestashop_install_dependencies(){
     fi
 
     alert_success "$(alert_line)"
+}
+
+function ps_install_db(){
+    alert_info "Installation of ${CMS} ${CMS_VERSION} database ..."
+    alert_info "$(alert_line)"
+
+    if [[ -d "${PATH_WEB}install-dev" ]]; then
+        cd "${PATH_WEB}install-dev" || return
+
+        php index_cli.php \
+            --domain="${DOMAIN}" \
+            --language="${LANGUAGE}" \
+            --timezone="${TIMEZONE}" \
+            --db_name="${DB_NAME}" --db_user="${DB_USER}" --db_password="${DB_PASS}" \
+            --email="${ADMIN_EMAIL}" --password="${ADMIN_PWD}" \
+            --firstname="${ADMIN_FIRSTNAME}" --lastname="${ADMIN_LASTNAME}" \
+            --ssl=1 \
+            --newsletter=0 \
+            --prefix="${PREFIX}"
+        
+        alert_success "${CMS} database was installed with success..."
+        alert_error "/!\ You must now delete ${PATH_WEB}install-dev and rename ${PATH_WEB}admin-dev folder"
+    else
+        alert_warning "${PATH_WEB}/install-dev does not exists database installation skipped"
+    fi
+
+    alert_info "$(alert_line)"
+}
+
+function ps_install_modules(){
+    # add module to composer.json && download
+    # install modules
+    return
+}
+
+function ps_disable_modules(){
+    # uninstall module
+    # remove from composer.json & delete folder
+    return
 }

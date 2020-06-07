@@ -9,15 +9,15 @@
 # Site_name must contain no space
 SITE_NAME="PS"
 CMS_VERSION="1.7.6.x"
-PROJECT_DIR="public"
-WEB_ROOT="/var/www/public/web/"
+DOMAIN="presta.test"
+PREFIX="ps_"
+LANGUAGE="fr"
 LOCALE="fr_FR"
 TIMEZONE="Europe/Paris"
-# ADMIN_USER="admin"
-# ADMIN_PWD="admin"
-# ADMIN_EMAIL="admin@gmail.com"
-# ADMIN_FIRSTNAME="admin"
-# ADMIN_LASTNAME="admin"
+ADMIN_EMAIL="admin@gmail.com"
+ADMIN_PWD="admin"
+ADMIN_FIRSTNAME="admin"
+ADMIN_LASTNAME="admin"
 
 # Modules to install
 # @desc : This is the part you can edit
@@ -28,7 +28,7 @@ ARR_MODULES[0]=""
 # Modules To uninstall
 # @desc : This is the part you can edit
 # ---------------------------------------
-ARR_MODULE_DISABLE[0]=""
+ARR_MODULES_DISABLE[0]=""
 
 
 
@@ -49,7 +49,8 @@ CMS="prestashop"
 # Paths
 # ---------------------------------------
 PATH_PUBLIC="/var/www/public/"
-PATH_COMPOSER_JSON="${WEB_ROOT}/composer.json"
+PATH_WEB="${PATH_PUBLIC}web/"
+PATH_COMPOSER_JSON="${PATH_WEB}/composer.json"
 PATH_PROVISION="/var/www/provision/"
 PATH_PROVISION_SHELL="${PATH_PROVISION}shell/"
 PATH_VAGRANT="/home/vagrant/"
