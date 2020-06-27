@@ -96,6 +96,10 @@ function ps_modules_disable(){
         composer --global config process-timeout 0
         for MODULE in "${ARR_MODULES_DISABLE[@]}"; do 
             php bin/console prestashop:module disable "${MODULE}"
+            
+            cd "${PATH_WEB}/modules" || return
+            rm -rf "${MODULE}"
+            cd "${PATH_WEB}" || return
         done
     fi
 
