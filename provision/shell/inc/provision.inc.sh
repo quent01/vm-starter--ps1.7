@@ -24,6 +24,7 @@ function prestashop_provisionning(){
     ps_install_db
     ps_modules_install
     ps_modules_disable
+    ps_theme_dl_enable
 
     alert_success "$(alert_line)"
     alert_success "End Provisioning Prestashop..."

@@ -20,6 +20,29 @@ function ps_download(){
     alert_success "$(alert_line)"    
 }
 
+function ps_theme_dl_enable(){
+    cd "${PATH_WEB}/themes" || return
+    if [[ ! -d "classic-rocket" ]]; then
+        alert_info "Download and installation of classic-rocket theme ..."
+        
+        git clone https://github.com/prestarocket-agence/classic-rocket --branch master --single-branch --depth 1
+        
+        cd classic-rocket || return
+        rm -rf .git && rm -rf .github
+        
+        cd "${PATH_WEB}/modules" || return
+        git clone https://github.com/PrestaShop/ps_searchbarjqauto.git --branch master --single-branch --depth 1
+        cd "${PATH_WEB}/modules/ps_searchbarjqauto" || return
+        rm -rf .git && rm -rf .github
+
+        cd "${PATH_WEB}" || return
+        php bin/console prestashop:theme:enable classic-rocket
+
+        alert_success "Classic rocket theme was downloaded with success." 
+    fi
+}
+
+
 function ps_install_dependencies(){
     alert_info "Installation of ${CMS} ${CMS_VERSION} dependencies ..."
     alert_info "$(alert_line)"
