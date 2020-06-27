@@ -74,6 +74,8 @@ function ps_modules_install(){
     # launch installation of module
     if [ "${#ARR_MODULES[@]}" -ne 0 ]; then
         cd "${PATH_WEB}" || return
+        composer --global config process-timeout 0
+
         for MODULE in "${ARR_MODULES[@]}"; do 
             composer require "prestashop/${MODULE}" --prefer-source --no-progress --no-suggest
             php bin/console prestashop:module install "${MODULE}"
