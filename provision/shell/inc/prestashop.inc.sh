@@ -27,6 +27,7 @@ function ps_install_dependencies(){
     if [[ -f "${PATH_COMPOSER_JSON}" ]]; then
         cd "${PATH_WEB}" || return
         composer --global config process-timeout 0
+        composer global require hirak/prestissimo
         composer install --prefer-source --optimize-autoloader --no-suggest --no-progress
         alert_success "${CMS} ${CMS_VERSION} dependencies were installed with success..."
     else
