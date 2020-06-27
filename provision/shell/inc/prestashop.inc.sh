@@ -53,9 +53,12 @@ function ps_install_db(){
             --ssl=1 \
             --newsletter=0 \
             --prefix="${PREFIX}"
+
+        cd "${PATH_WEB}" || return
+        random_str="$(tr -dc 'a-z0-9'  < /dev/urandom | fold -w 9 | head -n 1)";
+        mv admin-dev "admin${random_str}"
         
         alert_success "${CMS} database was installed with success..."
-        alert_error "/!\ You must now delete ${PATH_WEB}install-dev and rename ${PATH_WEB}admin-dev folder"
     else
         alert_warning "${PATH_WEB}/install-dev does not exists database installation skipped"
     fi
