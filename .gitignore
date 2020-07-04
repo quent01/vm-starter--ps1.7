@@ -2,20 +2,20 @@
 .vagrant
 
 
-public/adminx8tzc6y6nt/autoupgrade/*
-!public/adminx8tzc6y6nt/autoupgrade/index.php
-!public/adminx8tzc6y6nt/autoupgrade/backup/index.php
+public/admin*/autoupgrade/*
+!public/admin*/autoupgrade/index.php
+!public/admin*/autoupgrade/backup/index.php
 
-public/adminx8tzc6y6nt/backups/*
-!public/adminx8tzc6y6nt/backups/.htaccess
+public/admin*/backups/*
+!public/admin*/backups/.htaccess
 
-public/adminx8tzc6y6nt/import/*
-!public/adminx8tzc6y6nt/import/.htaccess
-!public/adminx8tzc6y6nt/import/index.php
+public/admin*/import/*
+!public/admin*/import/.htaccess
+!public/admin*/import/index.php
 
-public/adminx8tzc6y6nt/export/*
-!public/adminx8tzc6y6nt/export/.htaccess
-!public/adminx8tzc6y6nt/export/index.php
+public/admin*/export/*
+!public/admin*/export/.htaccess
+!public/admin*/export/index.php
 
 
 # Modules we cannnot install with composer
@@ -23,4 +23,7 @@ public/adminx8tzc6y6nt/export/*
 !public/modules/paypal
 !public/modules/ps_searchbarjqauto
 
-!public/modules/tiz_*
+
+# remove this line it is only for the starter
+# to prevent committing public files
+public
