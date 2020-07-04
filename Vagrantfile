@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
     config.vm.box = "quent01/vm-starter--lamp"
-    config.vm.hostname = "ps"
+    config.vm.hostname = "presta.test"
     config.vm.network "forwarded_port", guest: 80, host: 1234
     config.vm.network "private_network", ip: "192.168.33.20"
     
@@ -48,17 +48,22 @@ Vagrant.configure("2") do |config|
     config.vm.provision "shell" do |s|
         ssh_prv_key = ""
         ssh_pub_key = ""
+        ssh_config  = ""
         if File.file?("#{Dir.home}/.ssh/id_rsa")
-            ssh_config = File.read("#{Dir.home}/.ssh/config")
             ssh_prv_key = File.read("#{Dir.home}/.ssh/id_rsa")
             ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
         else
-            puts "No SSH key found. You will need to remedy this before pushing to the repository."
+            puts "No SSH key found. You will need to remedy this."
+        end
+        if File.file?("#{Dir.home}/.ssh/config")
+            ssh_config = File.read("#{Dir.home}/.ssh/config")
+        else
+            puts "No SSH config file found."
         end
         s.inline = <<-SHELL
             if grep -sq "#{ssh_pub_key}" /home/vagrant/.ssh/authorized_keys; then
                 echo "SSH keys already provisioned."
-                exit 0;
+                exit 0
             fi
             echo "SSH key provisioning."
             echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
@@ -66,7 +71,11 @@ Vagrant.configure("2") do |config|
             chmod 644 /home/vagrant/.ssh/id_rsa.pub
             echo "#{ssh_prv_key}" > /home/vagrant/.ssh/id_rsa
             chmod 600 /home/vagrant/.ssh/id_rsa
-            echo "#{ssh_config}" > /home/vagrant/.ssh/config
+            
+            if [ ! -z "#{ssh_config}" ]
+                echo "#{ssh_config}" > /home/vagrant/.ssh/config
+            fi
+            
             chown -R vagrant:vagrant /home/vagrant
             exit 0
         SHELL
